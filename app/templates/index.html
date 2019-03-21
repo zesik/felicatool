@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="/static/index.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FeliCa Tool</h1>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section id="section-hardware">
+        <h3>ハードウェア情報</h3>
+        <table class="data-entry-group">
+          <tbody>
+            <tr>
+              <th>カードリーダー</th>
+              <td id="hardware-device"></td>
+            </tr>
+            <tr>
+              <th>ステータス</th>
+              <td id="hardware-status" class="data-highlight"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="section-card">
+        <h3>カード</h3>
+        <table class="data-entry-group">
+          <tbody>
+            <tr>
+              <th>IDm</th>
+              <td id="card-idm" class="data-binary"></td>
+            </tr>
+            <tr>
+              <th>残高</th>
+              <td id="card-balance"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="section-history">
+        <h3>利用履歴</h3>
+        <table id="history-records" class="data-table">
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th class="visible-xl">時刻</th>
+              <th class="visible-lg">端末</th>
+              <th>処理</th>
+              <th>入場駅</th>
+              <th>出場駅</th>
+              <th>入金</th>
+              <th>支出</th>
+              <th>残高</th>
+              <th class="visible-xl">連番</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      &copy; 2019 Yang Liu
+    </div>
+  </footer>
+  <script src="/static/index.js"></script>
+</body>
+</html>
