@@ -1,6 +1,9 @@
 # Editor
 .vscode/
 
+# OS Files
+.DS_Store
+
 # Data
 .data/
 .history/
