@@ -135,7 +135,7 @@ class FelicaReader(object):
             raw_balance_records = self._read_all_blocks(tag, FELICA_SERVICE_BALANCE)
             if not raw_balance_records:
                 raise Exception('not a Japan transportation card')
-            raw_history_records = list(reversed(self._read_all_blocks(tag, FELICA_SERVICE_HISTORY)))
+            raw_history_records = filter(lambda d: d[0], reversed(self._read_all_blocks(tag, FELICA_SERVICE_HISTORY)))
         except Exception as e:
             log.error('error while reading data: %s', e)
             self.updater.emit_status('交通系 IC カードとして読み込めませんでした')
