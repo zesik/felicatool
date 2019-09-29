@@ -27,7 +27,7 @@ pipenv install
 
 download the Japanse station data file from here: [station file repo](), move it to the local .data folder:
 ```bash
-midir .data
+mkdir .data
 mv Stations.csv .data/station.csv
 ```
 
