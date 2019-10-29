@@ -97,16 +97,16 @@
         },
         "jinja2": {
             "hashes": [
-                "sha256:74c935a1b8bb9a3947c50a54766a969d4846290e1e788ea44c1392163723c3bd",
-                "sha256:f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"
+                "sha256:74320bb91f31270f9551d46522e33af46a80c3d619f4a4bf42b3164d30b5911f",
+                "sha256:9fe95f19286cfefaa917656583d020be14e7859c6b0252588391e47db34527de"
             ],
-            "version": "==2.10"
+            "version": "==2.10.3"
         },
         "libusb1": {
             "hashes": [
-                "sha256:9d4f66d2ed699986b06bc3082cd262101cb26af7a76a34bd15b7eb56cba37e0f"
+                "sha256:adf64a4f3f5c94643a1286f8153bcf4bc787c348b38934aacd7fe17fbeebc571"
             ],
-            "version": "==1.7"
+            "version": "==1.7.1"
         },
         "markupsafe": {
             "hashes": [
@@ -150,10 +150,10 @@
         },
         "ndeflib": {
             "hashes": [
-                "sha256:4a9d8733e22a28bc26d444f5eb3f6ab499a268c47fba5786cdc3489b3835f65a",
-                "sha256:ef4e139a0ee8c8379b75809d70e49d295cd28ad40aeed4a9d6ec3bff618d7c95"
+                "sha256:1d56828558b9b16f2822a4051824346347b66adf5320ea86070748b6f2454a88",
+                "sha256:c634b1af2ab454754f0fdbe1debd38247ed7bdaf94587359b857726f3ee7decb"
             ],
-            "version": "==0.3.2"
+            "version": "==0.3.3"
         },
         "nfcpy": {
             "hashes": [
@@ -178,10 +178,10 @@
         },
         "python-engineio": {
             "hashes": [
-                "sha256:b3a0816dbd58b2870ab42240f8a375e981f9ae529c41b861b95aa2cbd86fa169",
-                "sha256:efe95e61f77be5392626935e5d4b361889abd7c66d4c07c5b29ddaefff628fed"
+                "sha256:4a13fb87c819b855c55a731fdf82559adb8311c04cfdfebd6b9ecd1c2afbb575",
+                "sha256:9c9a6035b4b5e5a225f426f846afa14cf627f7571d1ae02167cb703fefd134b7"
             ],
-            "version": "==3.4.3"
+            "version": "==3.10.0"
         },
         "python-socketio": {
             "hashes": [
@@ -199,10 +199,11 @@
         },
         "werkzeug": {
             "hashes": [
-                "sha256:c3fd7a7d41976d9f44db327260e263132466836cef6f91512889ed60ad26557c",
-                "sha256:d5da73735293558eb1651ee2fddc4d0dedcfa06538b8813a2e20011583c9e49b"
+                "sha256:97660b282aa7e29f94f3fe378e5c7162d7ab9d601a8dbb1cbb2ffc8f0e54607d",
+                "sha256:cfd1281b1748288e59762c0e174d64d8bcb2b70e7c57bc4a1203c8825af24ac3"
             ],
-            "version": "==0.14.1"
+            "index": "pypi",
+            "version": "==0.15.3"
         }
     },
     "develop": {}
