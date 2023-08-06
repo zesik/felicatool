@@ -75,11 +75,10 @@ class FelicaReader(object):
 
     def _store_records(self, filename, raw_records):
         records = [' '.join(['{:02x}'.format(c) for c in r]) for r in raw_records]
-
         lines = []
         if os.path.exists(filename):
             try:
-                with open(filename, 'rb') as f:
+                with open(filename, 'r') as f:
                     lines = self._tail(f, len(records) + 1)
             except Exception as e:
                 log.error('error while open local file: %s', e)
@@ -122,7 +121,7 @@ class FelicaReader(object):
         return (new_record_count, prev)
 
     def on_connected(self, tag):
-        tagid = tag.identifier.encode("hex").lower()
+        tagid = tag.identifier.hex()
         log.info('found tag: type=%s (\'%s\'), id=%s', tag.type, tag.product, tagid)
         self.updater.emit_status('読み込み中')
 
@@ -135,14 +134,15 @@ class FelicaReader(object):
             raw_balance_records = self._read_all_blocks(tag, FELICA_SERVICE_BALANCE)
             if not raw_balance_records:
                 raise Exception('not a Japan transportation card')
-            raw_history_records = filter(lambda d: d[0], reversed(self._read_all_blocks(tag, FELICA_SERVICE_HISTORY)))
+            raw_history_records = list(filter(lambda d: d[0], reversed(self._read_all_blocks(tag, FELICA_SERVICE_HISTORY))))
         except Exception as e:
             log.error('error while reading data: %s', e)
             self.updater.emit_status('交通系 IC カードとして読み込めませんでした')
             return
 
         new_record_count, prev = self._store_records(self._get_history_records_file(tagid), raw_history_records)
-        history_records = map(lambda data: HistoryRecord(bytes(data)), raw_history_records)
+        history_records = list(map(lambda data: HistoryRecord(bytes(data)), raw_history_records))
+
         if new_record_count:
             for r in history_records[-new_record_count:]:
                 r.new = True
@@ -156,7 +156,7 @@ class FelicaReader(object):
         data = {
             'idm': tagid,
             'balance': BalanceRecord(raw_balance_records[0]).balance,
-            'history': map(lambda record: record.to_dict(), history_records)
+            'history': list(map(lambda record: record.to_dict(), history_records))
         }
 
         self.updater.emit_data(data)

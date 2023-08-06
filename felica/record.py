@@ -29,7 +29,7 @@ class StationRecord(object):
     def get_db(cls, filename):
         if not cls.db:
             cls.db = {}
-            for row in csv.reader(open(filename, 'rU'), delimiter=',', dialect=csv.excel_tab):
+            for row in csv.reader(open(filename, newline=''), delimiter=',', dialect=csv.excel_tab):
                 r = cls(row)
                 cls.db[r.key] = r
         return cls.db
@@ -41,7 +41,7 @@ class StationRecord(object):
 class Record(object):
     def __str__(self):
         if self.raw:
-            return ''.join(['{:02x}'.format(ord(b)) for b in self.raw])
+            return ''.join(['{:02x}'.format(b) for b in self.raw])
 
     @classmethod
     def get_date(cls, date):

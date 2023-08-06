@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 from flask import Flask
 from flask_socketio import SocketIO
-
-from events import SocketIOEventHandler, StatusUpdater
+from .events import SocketIOEventHandler, StatusUpdater
 
 NAMESPACE = '/felica'
 
