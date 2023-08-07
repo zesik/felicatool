@@ -12,7 +12,7 @@ class StatusUpdater(object):
     def _emit_event(self, event, data, method=None):
         if not method:
             method = self.socketio.emit
-        method(event, data, json=True, namespace=self.namespace)
+        method(event, data, namespace=self.namespace)
         self.socketio.sleep(0)
 
     def emit_status(self, status=None, device=None, method=None):
